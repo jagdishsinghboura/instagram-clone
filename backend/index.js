@@ -22,7 +22,7 @@ app.use(express.json());
 app.use(urlencoded({ extended: true }));
 
 const corsOption = {
-    origin: "http://localhost:5173",
+    origin: "https://instagram-clone-rho-eight.vercel.app",
     credentials: true,
 };
 app.use(cors(corsOption));
