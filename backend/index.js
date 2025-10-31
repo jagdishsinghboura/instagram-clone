@@ -22,7 +22,7 @@ app.use(express.json());
 app.use(urlencoded({ extended: true }));
 
 const corsOption = {
-    origin: "https://instagram-clone-hc11i7iwy-jagdishsinghbouras-projects.vercel.app",
+    origin:"*",
     credentials: true,
 };
 app.use(cors(corsOption));
