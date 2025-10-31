@@ -4,7 +4,7 @@ import axios from "axios"
 
 async function handleUserApiGet({path, data, }) {
   try {
-    const {data} = await axios.get(`http://localhost:8000/api/v1/user/${path}`);
+    const {data} = await axios.get(`${import.meta.env.VITE_BACKEND_API_URL}/api/v1/user/${path}`);
 
     return data;
     

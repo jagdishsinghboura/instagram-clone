@@ -22,7 +22,7 @@ app.use(express.json());
 app.use(urlencoded({ extended: true }));
 
 const corsOption = {
-    origin: "http://localhost:5173",
+    origin: "https://instagram-clone-hc11i7iwy-jagdishsinghbouras-projects.vercel.app",
     credentials: true,
 };
 app.use(cors(corsOption));
@@ -37,6 +37,6 @@ app.use("/api/v1/message",messageRoute)
 
 const PORT = process.env.PORT || 8000;
 
-server.listen(8000, () => {
+server.listen(PORT, () => {
     console.log(`Server listening at http://localhost:${PORT}`);
 });

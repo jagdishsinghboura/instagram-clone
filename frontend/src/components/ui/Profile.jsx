@@ -34,7 +34,7 @@ export default function Profile() {
   const displayedPost = activeTab === "posts" ? userProfile?.post : userProfile?.bookmarks
 
   const handleFollowUnFollow=async ()=>{
-      const {data} = await axios.get(`http://localhost:8000/api/v1/user/followorunfollow/${userId}`,
+      const {data} = await axios.get(`${import.meta.env.VITE_BACKEND_API_URL}/api/v1/user/followorunfollow/${userId}`,
          { withCredentials: true }
       )
         if(data.success){

@@ -23,7 +23,7 @@ export default function SuggestedUser() {
             </div>
             <div>
                 {suggestedUsers.map((user) => {
-                    return <SuggestedUserCard  selectedSuggUser={user}/>
+                    return <SuggestedUserCard key={user._id}  selectedSuggUser={user}/>
                 })}
             </div>
         </>

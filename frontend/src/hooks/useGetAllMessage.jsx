@@ -12,7 +12,7 @@ const useGetAllMessage = () => {
 
         const fetchAllMessage = async () => {
             try {
-                const res = await axios.get(`http://localhost:8000/api/v1/message/all/${selectedUser?._id}`, {
+                const res = await axios.get(`${import.meta.env.VITE_BACKEND_API_URL}/api/v1/message/all/${selectedUser?._id}`, {
                     withCredentials: true,
                 })
                 

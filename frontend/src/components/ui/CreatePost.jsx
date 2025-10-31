@@ -42,7 +42,7 @@ export default function CreatePost({ open, setOpen }) {
         formData.append("caption",caption);
         if(imagePreview)formData.append("image", file);
         try {
-            const res = await axios.post("http://localhost:8000/api/v1/post/addpost",
+            const res = await axios.post(`${import.meta.env.VITE_BACKEND_API_URL}/api/v1/post/addpost`,
                 formData,
                 {
                     headers:{

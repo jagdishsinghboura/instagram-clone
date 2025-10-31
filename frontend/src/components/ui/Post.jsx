@@ -81,7 +81,7 @@ export default function Post({ post }) {
 
     const deletePostHandler = async () => {
         try {
-            const res = await axios.delete(`http://localhost:8000/api/v1/post/delete/${post?._id}`, {
+            const res = await axios.delete(`${import.meta.env.VITE_BACKEND_API_URL}/api/v1/post/delete/${post?._id}`, {
                 withCredentials: true
             })
             if (res.data.success) {
@@ -102,7 +102,7 @@ export default function Post({ post }) {
     const reactOnPost = async () => {
         try {
 
-            const { data } = await axios.get(`http://localhost:8000/api/v1/post/react/${post?._id}`, {
+            const { data } = await axios.get(`${import.meta.env.VITE_BACKEND_API_URL}/api/v1/post/react/${post?._id}`, {
                 withCredentials: true,
             });
 
@@ -123,7 +123,7 @@ export default function Post({ post }) {
     const bookMarkhandler = async () => {
         try {
 
-            const res = await axios.get(`http://localhost:8000/api/v1/post/${post._id}/bookmark`, { withCredentials: true })
+            const res = await axios.get(`${import.meta.env.VITE_BACKEND_API_URL}/api/v1/post/${post._id}/bookmark`, { withCredentials: true })
 
             if (res.data.success) {
                 toast.success(res.data.message)
@@ -138,7 +138,7 @@ export default function Post({ post }) {
 
     const commentHandler = async () => {
         try {
-            const{data} = await axios.post(`http://localhost:8000/api/v1/post/${post._id}/comment`, { text }, {
+            const{data} = await axios.post(`${import.meta.env.VITE_BACKEND_API_URL}/api/v1/post/${post._id}/comment`, { text }, {
                 headers: {
                     'Content-Type': 'application/json'
                 },
@@ -169,7 +169,7 @@ export default function Post({ post }) {
     const hideCommentHandler =async()=>{
         try {
             
-            const {data}= await axios.post(`http://localhost:8000/api/v1/post/hidecomments/${post._id}`, {}, {
+            const {data}= await axios.post(`${import.meta.env.VITE_BACKEND_API_URL}/api/v1/post/hidecomments/${post._id}`, {}, {
                 withCredentials:true,
             })
 
@@ -189,7 +189,7 @@ export default function Post({ post }) {
 
         try {
             
-            const {data}= await axios.post(`http://localhost:8000/api/v1/post/hidelikes/${post._id}`, {}, {
+            const {data}= await axios.post(`${import.meta.env.VITE_BACKEND_API_URL}/api/v1/post/hidelikes/${post._id}`, {}, {
                 withCredentials:true,
             })
 

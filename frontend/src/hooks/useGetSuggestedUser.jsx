@@ -11,7 +11,9 @@ const useGetSuggestedUser = () => {
 
         const fetchSuggestedUsers = async () => {
             try {
-                const res = await axios.get("http://localhost:8000/api/v1/user/suggested", {
+
+                console.log("hii suggested usdr", import.meta.env.VITE_BACKEND_API_URL)
+                const res = await axios.get(`${import.meta.env.VITE_BACKEND_API_URL}/api/v1/user/suggested`, {
                     withCredentials: true,
                 })
 

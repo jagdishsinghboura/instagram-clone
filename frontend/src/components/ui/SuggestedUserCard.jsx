@@ -16,7 +16,7 @@ export default function SuggestedUserCard({ selectedSuggUser }) {
 
 
     const handleFollowUnFollow = async () => {
-        const { data } = await axios.get(`http://localhost:8000/api/v1/user/followorunfollow/${selectedSuggUser._id}`,
+        const { data } = await axios.get(`${import.meta.env.VITE_BACKEND_API_URL}/api/v1/user/followorunfollow/${selectedSuggUser._id}`,
             { withCredentials: true }
         )
         if (data.success) {
