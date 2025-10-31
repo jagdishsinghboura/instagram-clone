@@ -36,7 +36,7 @@ const corsOptions = {
   },
   credentials: true,
 };
-app.use(cors(corsOption));
+app.use(cors(corsOptions));
 
 app.get("/", (req, res)=>{
     res.send("sdajf")
