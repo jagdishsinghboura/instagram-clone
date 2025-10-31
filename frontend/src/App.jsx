@@ -96,6 +96,9 @@ function App() {
 
   }, [user, dispatch])
 
+  console.log("Backend URL:", import.meta.env.VITE_BACKEND_API_URL);
+
+
   return (
     <div>
       <RouterProvider router={browserRouter} />
