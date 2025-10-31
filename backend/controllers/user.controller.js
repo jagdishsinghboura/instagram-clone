@@ -154,7 +154,12 @@ export const login = async (req, res) => {
             following: user.following,
             posts: populatedPosts
         }
-        res.cookie('token', token, { maxAge: 1 * 24 * 60 * 60 * 1000 })
+        res.cookie("token", token, {
+  httpOnly: true,
+  secure: true,      
+  sameSite: "None",    
+  maxAge: 24 * 60 * 60 * 1000,
+});
         res.cookie('username', 'JohnDoe', { maxAge: 900000 });
 
         return res.json({
