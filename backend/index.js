@@ -21,9 +21,20 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(urlencoded({ extended: true }));
 
-const corsOption = {
-    origin:"*",
-    credentials: true,
+const allowedOrigins = [
+  "https://instagram-clone-rho-eight.vercel.app",
+  "http://localhost:5173", // Vite default
+];
+
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true,
 };
 app.use(cors(corsOption));
 
